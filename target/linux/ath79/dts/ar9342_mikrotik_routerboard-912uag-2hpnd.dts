@@ -137,12 +137,6 @@
 			gpio-export,output = <1>;
 			gpios = <&ssr 6 GPIO_ACTIVE_HIGH>;
 		};
-
-		pcie_power {
-			gpio-export,name = "power-pcie";
-			gpio-export,output = <0>;
-			gpios = <&ssr 7 GPIO_ACTIVE_HIGH>;
-		};
 	};
 };
 
@@ -194,6 +188,12 @@
 		registers-number = <1>;
 		reg = <1>;
 		spi-max-frequency = <50000000>;
+
+		power_pcie {
+			gpio-hog;
+			gpios = <7 0>;
+			output-high;
+		};
 	};
 };
 
