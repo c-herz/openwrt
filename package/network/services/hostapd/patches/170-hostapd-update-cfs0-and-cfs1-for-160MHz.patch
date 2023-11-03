@@ -29,7 +29,7 @@ Signed-off-by: P Praneesh <ppranees@codeaurora.org>
 
 --- a/hostapd/config_file.c
 +++ b/hostapd/config_file.c
-@@ -1153,6 +1153,8 @@ static int hostapd_config_vht_capab(stru
+@@ -1157,6 +1157,8 @@ static int hostapd_config_vht_capab(stru
  		conf->vht_capab |= VHT_CAP_RX_ANTENNA_PATTERN;
  	if (os_strstr(capab, "[TX-ANTENNA-PATTERN]"))
  		conf->vht_capab |= VHT_CAP_TX_ANTENNA_PATTERN;
@@ -130,7 +130,7 @@ Signed-off-by: P Praneesh <ppranees@codeaurora.org>
  #undef VHT_CAP_CHECK_MAX
 --- a/src/common/ieee802_11_defs.h
 +++ b/src/common/ieee802_11_defs.h
-@@ -1349,6 +1349,8 @@ struct ieee80211_ampe_ie {
+@@ -1359,6 +1359,8 @@ struct ieee80211_ampe_ie {
  #define VHT_CAP_VHT_LINK_ADAPTATION_VHT_MRQ_MFB     ((u32) BIT(26) | BIT(27))
  #define VHT_CAP_RX_ANTENNA_PATTERN                  ((u32) BIT(28))
  #define VHT_CAP_TX_ANTENNA_PATTERN                  ((u32) BIT(29))

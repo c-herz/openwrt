@@ -15,7 +15,7 @@
  	if (!msg)
  		return -ENOBUFS;
  
-@@ -6100,7 +6100,7 @@ static void nl80211_teardown_ap(struct i
+@@ -6114,7 +6114,7 @@ static void nl80211_teardown_ap(struct i
  		nl80211_mgmt_unsubscribe(bss, "AP teardown");
  
  	nl80211_put_wiphy_data_ap(bss);
@@ -24,7 +24,7 @@
  }
  
  
-@@ -8859,8 +8859,6 @@ static int wpa_driver_nl80211_if_remove(
+@@ -8905,8 +8905,6 @@ static int wpa_driver_nl80211_if_remove(
  	} else {
  		wpa_printf(MSG_DEBUG, "nl80211: First BSS - reassign context");
  		nl80211_teardown_ap(bss);
