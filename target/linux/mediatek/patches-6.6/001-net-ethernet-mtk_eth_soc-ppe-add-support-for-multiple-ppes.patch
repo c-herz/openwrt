@@ -308,14 +308,14 @@ index aa262e6f4b85..fdad16c16193 100644
  	int wed_index = -1;
 @@ -264,6 +264,14 @@ mtk_flow_offload_replace(struct mtk_eth *eth, struct flow_cls_offload *f,
  		struct flow_match_meta match;
- 
+
  		flow_rule_match_meta(rule, &match);
 +		if (mtk_is_netsys_v2_or_greater(eth)) {
 +			idev = __dev_get_by_index(&init_net, match.key->ingress_ifindex);
 +			if (idev) {
 +				struct mtk_mac *mac = netdev_priv(idev);
-+
-+				ppe_index = mac->ppe_idx;
++				if(mac->ppe_idx < 3)
++					ppe_index = mac->ppe_idx;
 +			}
 +		}
  	} else {
